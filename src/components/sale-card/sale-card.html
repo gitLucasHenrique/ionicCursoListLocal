@@ -1,0 +1,12 @@
+<!-- Generated template for the SaleCardComponent component -->
+<ion-card *ngIf="sale">
+    <ion-card-content>
+      <img [src]="sale.img" *ngIf="sale.img">
+      <ion-card-title>
+        {{sale.title}}
+        </ion-card-title>
+        <p>{{sale.customer}} </p>
+        <p>{{sale.value | currency:'BRL'}} </p>
+        <p>{{sale.createdAt | date:'fullDate'}} </p>
+    </ion-card-content>
+  </ion-card>

@@ -1,7 +1,13 @@
 <ion-menu [content]="content">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Menu</ion-title>
+      <ion-item no-lines>
+        <ion-avatar item-start>
+          <img src="https://www.yourfirstpatient.com/assets/default-user-avatar-thumbnail@2x-ad6390912469759cda3106088905fa5bfbadc41532fbaa28237209b1aa976fc9.png">
+        </ion-avatar>
+        <h2>Lucas</h2>
+        <p>{{userProvider.userLocal?.username}}</p>
+      </ion-item>
     </ion-toolbar>
   </ion-header>
 
@@ -9,6 +15,9 @@
     <ion-list>
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
+      </button>
+      <button menuClose ion-item  (click)="logoff()">
+        Sair
       </button>
     </ion-list>
   </ion-content>

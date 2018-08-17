@@ -3,21 +3,31 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>Vendas</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
-      </div>
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <!--
+<ion-card *ngFor="let sale of list" (click)="onClick(sale)">
+    <ion-card-content>
+      <ion-card-title>
+        {{sale.title}}
+        </ion-card-title>
+        <p>{{sale.customer}} </p>
+        <p>{{sale.value | currency:'BRL'}} </p>
+        <p>{{sale.createdAt | date:'dd/MM/yyyy'}} </p>
+    </ion-card-content>
+  </ion-card>
+    -->
+
+  <ion-fab right bottom (click)="add()">
+      <button ion-fab color="secondary"><ion-icon name="md-add"></ion-icon></button>
+  </ion-fab>
+  
+  <sale-card [sale]="sale" *ngFor="let sale of list" (click)="onClick(sale)"></sale-card>
 </ion-content>

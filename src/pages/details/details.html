@@ -1,0 +1,33 @@
+<!--
+  Generated template for the DetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Detalhes da Venda</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <sale-card [sale]="sale" *ngIf="sale"></sale-card>
+  <!--
+        <ion-card *ngIf="sale">
+        <ion-card-content>
+          <ion-card-title>
+            {{sale.title}}
+            </ion-card-title>
+            <p>{{sale.customer}} </p>
+            <p>{{sale.value | currency:'BRL'}} </p>
+            <p>{{sale.createdAt | date:'dd/MM/yyyy'}} </p>
+        </ion-card-content>
+      </ion-card>
+IT'S ALIVE!
+<img src="http://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/8/2017/05/frankenstein-630x400.jpg">
+  -->
+
+</ion-content>
